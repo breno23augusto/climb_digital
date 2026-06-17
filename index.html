@@ -443,46 +443,6 @@
       margin-top: 0.25rem;
     }
 
-    /* ── SOCIAL PROOF ── */
-    .social-proof {
-      background: var(--bg-surface);
-      padding: 2.5rem 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .social-proof-track {
-      display: flex;
-      gap: clamp(2.5rem, 6vw, 5rem);
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .social-proof-item {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      white-space: nowrap;
-    }
-
-    .social-proof-item:hover {
-      color: var(--text);
-    }
-
-    .social-proof-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-      flex-shrink: 0;
-    }
-
     /* ── PROBLEM SECTION ── */
     .problem-grid {
       display: grid;
@@ -527,6 +487,28 @@
       color: var(--text-secondary);
       font-size: 0.95rem;
       line-height: 1.6;
+    }
+
+    /* ── SOPHYA CARD ── */
+    .sophya-card {
+      text-align: center;
+    }
+
+    .sophya-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.25rem;
+      border: 3px solid var(--red-dark);
+      box-shadow: 0 0 30px rgba(230, 57, 70, 0.2);
+      transition: all var(--transition);
+    }
+
+    .sophya-card:hover .sophya-photo {
+      border-color: var(--red);
+      box-shadow: 0 0 40px rgba(230, 57, 70, 0.35);
+      transform: scale(1.03);
     }
 
     /* ── SOLUTION SECTION ── */
@@ -1038,13 +1020,12 @@
     <div class="hero-content">
       <div class="container">
         <div class="hero-text">
-          <p class="section-label">Agência de Marketing & Vendas</p>
+          <p class="section-label">Somos a Climb Digital</p>
           <h1 class="display">
             Toda empresa<br>pode ir <span class="accent">mais alto</span>
           </h1>
           <p class="subheadline">
-            Estratégias de marketing digital validadas para escalar seu faturamento.
-            Do primeiro passo ao topo, criamos o caminho para o crescimento da sua empresa.
+            A nossa preocupação não começa nas redes sociais. Começa dentro do seu negócio.
           </p>
           <div class="hero-cta-group">
             <a href="#cta" class="btn btn-primary" id="heroCta">
@@ -1082,20 +1063,6 @@
     </div>
   </section>
 
-  <!-- ═══ SOCIAL PROOF ═══ -->
-  <section class="social-proof">
-    <div class="container">
-      <div class="social-proof-track">
-        <div class="social-proof-item"><span class="social-proof-dot"></span> Meta Ads Partner</div>
-        <div class="social-proof-item"><span class="social-proof-dot"></span> Google Partner</div>
-        <div class="social-proof-item"><span class="social-proof-dot"></span> RD Station</div>
-        <div class="social-proof-item"><span class="social-proof-dot"></span> TikTok Ads</div>
-        <div class="social-proof-item"><span class="social-proof-dot"></span> LinkedIn Ads</div>
-        <div class="social-proof-item"><span class="social-proof-dot"></span> Hotmart</div>
-      </div>
-    </div>
-  </section>
-
   <!-- ═══ THE PROBLEM ═══ -->
   <section id="problema">
     <div class="container">
@@ -1105,19 +1072,84 @@
         <div class="problem-card">
           <span class="problem-card-icon">📉</span>
           <h3>Investe em anúncios e não tem retorno</h3>
-          <p>Seus anúncios no Google e redes sociais consomem orçamento mas não trazem clientes reais para o negócio.
-          </p>
+          <p>Dinheiro saindo todo mês em impulsionamentos, posts patrocinados e nada que você consiga medir. Você sente
+            que está pagando, mas não está funcionando.</p>
         </div>
         <div class="problem-card">
-          <span class="problem-card-icon">🎯</span>
-          <h3>Time de vendas sem leads qualificados</h3>
-          <p>Sua equipe comercial perde tempo com contatos que não têm perfil ou intenção real de compra.</p>
+          <span class="problem-card-icon">⏰</span>
+          <h3>Sem tempo de criar conteúdo</h3>
+          <p>Você sabe que precisa aparecer. Mas no dia a dia, entre atender cliente, resolver operação e apagar
+            incêndio, o conteúdo sempre fica pra depois. E "depois" nunca chega.</p>
         </div>
         <div class="problem-card">
           <span class="problem-card-icon">📊</span>
-          <h3>Faturamento estagnado há meses</h3>
-          <p>Você sabe que sua empresa tem potencial para crescer, mas as estratégias atuais não estão funcionando.</p>
+          <h3>Faturamento estagnado e sem ideias do que fazer</h3>
+          <p>Você já tentou algumas coisas, nenhuma moveu o ponteiro. E a sensação é de estar trabalhando muito pra
+            ficar no mesmo lugar.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CASES / PROJETOS REAIS ═══ -->
+  <section id="cases">
+    <div class="container">
+      <p class="section-label reveal">Projetos Reais</p>
+      <h2 class="display reveal" style="text-align: center;">Aqui você acompanha projetos reais.<br>Empresas da nossa
+        cidade que escolheram crescer com estrutura.</h2>
+      <p class="body-large reveal" style="margin: 1rem auto 0; text-align: center;">Palavras convencem. Trabalho
+        comprova.</p>
+
+      <div class="instagram-carousel-wrapper reveal">
+        <div class="swiper instagram-carousel">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <iframe src="https://www.instagram.com/reel/DYXfgZegG48/embed/" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://www.instagram.com/reel/DWkQYhPj-cx/embed/" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://www.instagram.com/reel/DYztMFeRyKy/embed/" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://www.instagram.com/reel/COPY_REEL_4/embed/" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://www.instagram.com/reel/COPY_REEL_5/embed/" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://www.instagram.com/reel/COPY_REEL_6/embed/" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <p class="section-label reveal" style="text-align: center; margin-top: 4rem;">Cases de Tráfego</p>
+      <h3 class="display reveal" style="text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem;">
+        Não mostramos só o número.<br>Mostramos o raciocínio por trás.</h3>
+
+      <div class="problem-grid reveal-stagger" style="margin-top: 2rem;">
+        <div class="problem-card">
+          <div class="metric-value" style="margin-bottom: 1rem;">+180%</div>
+          <h3>E-commerce local</h3>
+          <p>Faturamento cresceu 180% em 90 dias depois que reestruturamos as campanhas, a segmentação e a página de
+            venda. Cada real passou a ser investido com direção.</p>
+        </div>
+        <div class="problem-card">
+          <div class="metric-value" style="margin-bottom: 1rem;">4x</div>
+          <h3>Clínica de estética</h3>
+          <p>Aumento de 4x no número de agendamentos com anúncios regionais + fluxo de WhatsApp automatizado. A equipe
+            comercial passou a receber leads já qualificados.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <img src="partners.png" alt="partners"
+          style="padding: 16px;background: #e53c496e;border-radius: 8px;width: -webkit-fill-available;">
       </div>
     </div>
   </section>
@@ -1212,35 +1244,19 @@
         </div>
       </div>
 
-      <!-- Testimonials -->
-      <div style="margin-top: 5rem;">
-        <p class="section-label reveal">Depoimentos</p>
-        <h2 class="display reveal">Quem já chegou<br>ao topo com a gente</h2>
+    </div>
+  </section>
 
-        <!-- Instagram Reels Carousel -->
-        <div class="instagram-carousel-wrapper reveal">
-          <div class="swiper instagram-carousel">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <iframe src="https://www.instagram.com/reel/DYXfgZegG48/embed/" allowfullscreen loading="lazy"></iframe>
-              </div>
-              <div class="swiper-slide">
-                <iframe src="https://www.instagram.com/reel/DWkQYhPj-cx/embed/" allowfullscreen loading="lazy"></iframe>
-              </div>
-              <div class="swiper-slide">
-                <iframe src="https://www.instagram.com/reel/DYztMFeRyKy/embed/" allowfullscreen loading="lazy"></iframe>
-              </div>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-
-        <div class="testimonial-grid reveal-stagger">
-          <img src="partners.png" alt="partners"
-            style="border-radius: 16px;padding: 16px;background: #595959;width: stretch;">
-        </div>
+  <!-- ═══ POR QUE CONFIAR ═══ -->
+  <section id="confiar">
+    <div class="container">
+      <p class="section-label reveal">Por que confiar?</p>
+      <h2 class="display reveal" style="text-align: center;">Ficamos porque geramos resultado.<br>Não por contrato.</h2>
+      <div class="body-large reveal" style="margin: 1.5rem auto 0; text-align: center; max-width: 720px;">
+        <p>Qualquer empresa assina contrato. Só quem acredita no próprio trabalho dispensa essa segurança.</p>
+        <p style="margin-top: 1rem;">Na Climb, a lógica é simples: enquanto o seu negócio crescer, a gente continua
+          junto. Sem
+          amarras, sem letras miúdas. A nossa permanência é conquistada todo mês, pelo resultado que entregamos.</p>
       </div>
     </div>
   </section>
@@ -1248,30 +1264,72 @@
   <!-- ═══ THE METHOD ═══ -->
   <section class="process-section" id="metodo">
     <div class="container">
-      <p class="section-label reveal">O Método</p>
-      <h2 class="display reveal">Como funciona o processo<br>da base ao topo</h2>
+      <p class="section-label reveal">Como trabalhamos</p>
+      <h2 class="display reveal">Cinco passos para colocar<br>seu negócio no topo</h2>
       <div class="process-steps reveal-stagger">
         <div class="process-step">
           <div class="process-step-number">1</div>
-          <h3>Diagnóstico</h3>
-          <p>Analisamos seu cenário atual, mercado, concorrência e oportunidades de crescimento.</p>
+          <h3>Entendemos o seu negócio primeiro</h3>
+          <p>Antes de qualquer campanha, a gente mergulha no que você faz, quem é o seu cliente e o que precisa mudar.
+          </p>
         </div>
         <div class="process-step">
           <div class="process-step-number">2</div>
-          <h3>Estratégia</h3>
-          <p>Desenhamos um plano de ação exclusivo com canais, metas e cronograma definidos.</p>
+          <h3>Montamos a estratégia certa</h3>
+          <p>Não existe fórmula única. O que funciona pra uma loja de roupa não funciona pra uma clínica. Cada negócio
+            tem o seu caminho.</p>
         </div>
         <div class="process-step">
           <div class="process-step-number">3</div>
-          <h3>Execução</h3>
-          <p>Colocamos campanhas, conteúdos e automações no ar com acompanhamento diário.</p>
+          <h3>Executamos com estrutura</h3>
+          <p>Tráfego, conteúdo, audiovisual, design — tudo integrado. Sem você precisar coordenar mil fornecedores
+            diferentes.</p>
         </div>
         <div class="process-step">
           <div class="process-step-number">4</div>
-          <h3>Otimização</h3>
-          <p>Analisamos dados semanalmente para melhorar continuamente o ROI das campanhas.</p>
+          <h3>Acompanhamos de perto</h3>
+          <p>Resultados semanais. Ajustes em tempo real. Você nunca fica no escuro sobre o que está acontecendo.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">5</div>
+          <h3>Renovamos pelo resultado</h3>
+          <p>Sem contrato longo. Sem multa. Ficamos porque faz sentido ficar. Pra você e pra nós.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ A EQUIPE ═══ -->
+  <section id="equipe">
+    <div class="container">
+      <p class="section-label reveal">A equipe</p>
+      <h2 class="display reveal" style="text-align: center;">Por trás de cada campanha,<br>tem gente de verdade</h2>
+      <p class="body-large reveal" style="margin: 1rem auto 3rem; text-align: center;">Na Climb você conta com uma
+        estrutura completa pensando no seu negócio.</p>
+
+      <div class="problem-grid reveal-stagger">
+        <div class="problem-card">
+          <h3>Uma mente estratégica</h3>
+          <p>Visão de negócio, audiovisual e as decisões que definem o rumo de cada campanha.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Um especialista em tráfego</h3>
+          <p>Cada real investido acompanhado, ajustado e justificado.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Um designer</h3>
+          <p>Estratégia que vira visual. A sua marca reconhecida antes mesmo de alguém ler o texto.</p>
+        </div>
+        <div class="problem-card sophya-card">
+          <img src="sophya.png" alt="Foto da Sophya, rosto das campanhas da Climb Digital" class="sophya-photo">
+          <h3>A Sophya</h3>
+          <p>Rosto conhecido na cidade, presente nas campanhas de quem escolheu humanizar a comunicação. Porque as
+            pessoas compram de pessoas.</p>
+        </div>
+      </div>
+
+      <p class="body-large reveal" style="margin: 2.5rem auto 0; text-align: center;">E quando o projeto pede mais:
+        drone, blogueiras locais, produção audiovisual. Você não precisa correr atrás de nada. A gente já tem.</p>
     </div>
   </section>
 
@@ -1279,10 +1337,11 @@
   <section class="final-cta" id="cta">
     <div class="final-cta-glow" aria-hidden="true"></div>
     <div class="container">
-      <p class="section-label reveal">Vamos Conversar?</p>
-      <h2 class="display reveal">Pronto para levar sua empresa<br>ao próximo nível?</h2>
-      <p class="reveal">Agende uma consultoria gratuita e descubra como podemos acelerar o crescimento da sua empresa
-        com estratégias de marketing digital que realmente funcionam.</p>
+      <p class="section-label reveal">Vamos conversar?</p>
+      <h2 class="display reveal">A gente está pronto.<br>E você?</h2>
+      <p class="reveal">Se você chegou até aqui, já sabe que precisa de estrutura. Não de mais posts. Não de mais
+        promessa. De uma empresa que entende o seu negócio e trabalha pra ele crescer de verdade.</p>
+      <p> A gente está pronto. E você?</p>
       <div class="final-cta-buttons reveal">
         <a href="#" class="btn btn-whatsapp" id="finalCta">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -1290,7 +1349,7 @@
             <path
               d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
           </svg>
-          Fale com um Especialista
+          Falar com a Climb no WhatsApp →
         </a>
       </div>
     </div>
