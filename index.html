@@ -15,6 +15,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <style>
     /* ── Reset & Custom Properties ── */
@@ -858,13 +859,38 @@
       border-color: var(--red-dark);
     }
 
-    .instagram-carousel .swiper-slide iframe {
+    .instagram-carousel .slide-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-deep);
+    }
+
+    .instagram-carousel .slide-frame iframe {
       display: block;
       width: 100%;
       aspect-ratio: 9 / 16;
-      max-height: 620px;
       border: none;
       background: var(--bg-deep);
+    }
+
+    .instagram-carousel .slide-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: transparent;
+      cursor: grab;
+      touch-action: pan-y;
+      transition: opacity 0.2s;
+    }
+
+    .instagram-carousel .slide-overlay:active {
+      cursor: grabbing;
+    }
+
+    .instagram-carousel .slide-overlay.interacted {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .instagram-carousel .swiper-button-next,
@@ -994,7 +1020,6 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -1101,25 +1126,29 @@
         comprova.</p>
 
       <div class="instagram-carousel-wrapper reveal">
+        <!-- ⚠️ ATENÇÃO: substituir COPY_REEL_4, COPY_REEL_5 e COPY_REEL_6 pelos IDs reais dos Reels do Instagram -->
         <div class="swiper instagram-carousel">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <iframe src="https://www.instagram.com/reel/DYXfgZegG48/embed/" allowfullscreen loading="lazy"></iframe>
+              <div class="slide-frame">
+                <iframe src="https://www.instagram.com/reel/DYXfgZegG48/embed/" title="Reel do Instagram - Case 1"
+                  allowfullscreen loading="lazy"></iframe>
+                <div class="slide-overlay" aria-hidden="true"></div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <iframe src="https://www.instagram.com/reel/DWkQYhPj-cx/embed/" allowfullscreen loading="lazy"></iframe>
+              <div class="slide-frame">
+                <iframe src="https://www.instagram.com/reel/DWkQYhPj-cx/embed/" title="Reel do Instagram - Case 2"
+                  allowfullscreen loading="lazy"></iframe>
+                <div class="slide-overlay" aria-hidden="true"></div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <iframe src="https://www.instagram.com/reel/DYztMFeRyKy/embed/" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="swiper-slide">
-              <iframe src="https://www.instagram.com/reel/COPY_REEL_4/embed/" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="swiper-slide">
-              <iframe src="https://www.instagram.com/reel/COPY_REEL_5/embed/" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="swiper-slide">
-              <iframe src="https://www.instagram.com/reel/COPY_REEL_6/embed/" allowfullscreen loading="lazy"></iframe>
+              <div class="slide-frame">
+                <iframe src="https://www.instagram.com/reel/DYztMFeRyKy/embed/" title="Reel do Instagram - Case 3"
+                  allowfullscreen loading="lazy"></iframe>
+                <div class="slide-overlay" aria-hidden="true"></div>
+              </div>
             </div>
           </div>
           <div class="swiper-button-prev"></div>
@@ -1516,7 +1545,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.instagram-carousel', {
+    var instagramSwiper = new Swiper('.instagram-carousel', {
       slidesPerView: 1,
       spaceBetween: 24,
       navigation: {
@@ -1536,6 +1565,19 @@
           spaceBetween: 32,
         },
       },
+      on: {
+        slideChange: function () {
+          document.querySelectorAll('.instagram-carousel .slide-overlay').forEach(function (overlay) {
+            overlay.classList.remove('interacted');
+          });
+        }
+      }
+    });
+
+    document.querySelectorAll('.instagram-carousel .slide-overlay').forEach(function (overlay) {
+      overlay.addEventListener('click', function () {
+        this.classList.add('interacted');
+      });
     });
   </script>
 </body>
