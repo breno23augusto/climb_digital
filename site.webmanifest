@@ -1,0 +1,21 @@
+{
+  "name": "Climb Digital",
+  "short_name": "Climb Digital",
+  "description": "Aceleramos o crescimento da sua empresa com estratégias de marketing digital validadas.",
+  "start_url": "/climb_digital/",
+  "display": "standalone",
+  "background_color": "#060606",
+  "theme_color": "#060606",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
